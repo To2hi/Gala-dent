@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#d0c5b8",
+              "on-background": "#1b1c19",
+              "on-secondary-fixed-variant": "#564336",
+              "secondary-fixed": "#faddcb",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f5f4ee",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e3e3dd",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeee8",
+              "on-secondary-fixed": "#27180d",
+              "on-primary-container": "#544325",
+              "tertiary": "#5f5e5e",
+              "inverse-surface": "#30312d",
+              "inverse-primary": "#ddc39c",
+              "secondary": "#6f5a4c",
+              "on-primary-fixed": "#271902",
+              "surface": "#fbf9f3",
+              "secondary-fixed-dim": "#ddc1b0",
+              "on-primary-fixed-variant": "#564426",
+              "primary-fixed-dim": "#ddc39c",
+              "on-secondary-container": "#745e50",
+              "surface-variant": "#e3e3dd",
+              "surface-container-high": "#e9e8e2",
+              "surface-bright": "#fbf9f3",
+              "on-surface-variant": "#4d463c",
+              "surface-dim": "#dbdad4",
+              "on-tertiary-fixed-variant": "#474746",
+              "outline": "#7e766b",
+              "background": "#fbf9f3",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#1b1c1c",
+              "primary-fixed": "#fadfb6",
+              "inverse-on-surface": "#f2f1eb",
+              "tertiary-fixed": "#e4e2e1",
+              "primary": "#6f5b3b",
+              "brand-gold": "#C9B08A",
+              "tertiary-container": "#b5b3b3",
+              "surface-tint": "#6f5b3b",
+              "on-tertiary-container": "#464545",
+              "on-surface": "#1b1c19",
+              "secondary-container": "#f7dac8",
+              "primary-container": "#c9b08a",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(251, 249, 243, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .editorial-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .pulse-hover:hover {
+        animation: subtlePulse 2s infinite ease-in-out;
+      }
+
+      @keyframes subtlePulse {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(111, 91, 59, 0.2); }
+        50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(111, 91, 59, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(111, 91, 59, 0); }
+      }
+
+      .stagger-1 { transition-delay: 0.1s; }
+      .stagger-2 { transition-delay: 0.2s; }
+      .stagger-3 { transition-delay: 0.3s; }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+<title>GALA DENT - Sprzęt</title></head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f3]/96 backdrop-blur-2xl shadow-[0_20px_52px_rgba(27,28,25,0.16)] border-b border-[#d0c5b8]/45 ring-1 ring-[#fffdf8]/60">
+<div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+<a class="shrink-0 transition-all duration-300 hover:opacity-80" href="../index.html#/" target="_parent"><img alt="Logo GALA DENT" class="h-10 md:h-14 w-auto" src="../brand/gala-dent-logo.png"/></a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#6f5a4c] hover:text-[#6f5b3b] hover:opacity-80 transition-all duration-300 font-['Manrope'] font-medium tracking-tight text-sm" href="../index.html#/o-klinice" target="_parent">O Klinice</a><a class="text-[#6f5a4c] hover:text-[#6f5b3b] hover:opacity-80 transition-all duration-300 font-['Manrope'] font-medium tracking-tight text-sm" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a><a class="text-[#6f5b3b] font-bold border-b-2 border-[#6f5b3b] pb-1 transition-all duration-300 font-['Manrope'] tracking-tight text-sm" href="../index.html#/sprzet" target="_parent">Sprzęt</a><a class="text-[#6f5a4c] hover:text-[#6f5b3b] hover:opacity-80 transition-all duration-300 font-['Manrope'] font-medium tracking-tight text-sm" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+</div>
+<a class="bg-[#6f5b3b] text-white px-6 py-2.5 rounded-md font-label text-xs uppercase tracking-widest font-bold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 active:scale-95" href="../index.html#/kontakt" target="_parent">Umów Wizytę</a>
+</div>
+</nav>
+<main class="pt-20">
+<section class="relative min-h-[716px] flex items-center overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-[#C9B08A] to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 w-full relative z-10 editorial-grid gap-8">
+<div class="col-span-12 md:col-span-7 reveal">
+<span class="font-label text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Standard GALA DENT</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 leading-[1.1]">
+                        Zaawansowany <span class="text-[#C9B08A] italic">Sprzęt</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-xl leading-relaxed mb-8">
+                        W GALA DENT wierzymy, że precyzja diagnostyczna to fundament skutecznego leczenia. Nasza klinika wyposażona jest w nowoczesne rozwiązania, które wspierają bezpieczeństwo, komfort i przewidywalność terapii.
+                    </p>
+<div class="flex gap-4">
+<a class="bg-[#C9B08A] text-on-primary px-8 py-3 rounded-md font-headline font-semibold hover:opacity-90 hover:-translate-y-1 hover:shadow-lg transition-all duration-300" href="../index.html#/kontakt" target="_parent">Umów konsultację</a>
+<a class="text-[#C9B08A] border-b-2 border-[#C9B08A]/20 hover:border-[#C9B08A] px-4 py-3 font-headline font-semibold transition-all duration-300 hover:translate-x-1" href="../index.html#/oferta" target="_parent">Zobacz ofertę</a>
+</div>
+</div>
+<div class="hidden md:flex col-span-5 items-center justify-end reveal stagger-2">
+<div class="relative w-full aspect-square bg-surface-container-highest rounded-full overflow-hidden p-8 border border-outline-variant/10 shadow-inner group">
+<img alt="Tomograf Planmeca Viso G3" class="w-full h-full object-cover rounded-full mix-blend-multiply opacity-80 group-hover:scale-110 transition-transform duration-1000" data-alt="Close up of modern white dental imaging machine" src="../gallery/cbct-machine.webp"/>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="relative group reveal">
+<div class="absolute -inset-4 bg-primary-container/10 rounded-xl blur-2xl group-hover:bg-primary-container/20 transition-all duration-700"></div>
+<img alt="Planmeca Viso G3 w gabinecie GALA DENT" class="relative rounded-xl shadow-2xl z-10 w-full object-cover aspect-[4/5] transform transition-transform duration-700 group-hover:scale-[1.01]" data-alt="High-end 3D dental scanning equipment in clinical room" src="../gallery/treatment-room-wide.jpg"/>
+<div class="absolute bottom-6 right-6 z-20 glass-panel bg-black/55 backdrop-blur-xl p-4 rounded-lg border border-white/12 shadow-xl transition-all duration-500 group-hover:-translate-y-2">
+<p class="font-label text-xs font-bold text-white/70 mb-1">TECHNOLOGIA 3D</p>
+<p class="font-headline text-sm font-extrabold text-white">Planmeca Viso G3</p>
+</div>
+</div>
+<div class="reveal stagger-1">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-6">Diagnostyka CBCT nowej generacji</h2>
+<div class="space-y-6">
+<div class="p-6 bg-surface-container-low rounded-lg transition-all duration-500 hover:scale-[1.02] hover:shadow-md hover:bg-surface-container-high group">
+<h3 class="font-headline font-bold text-[#C9B08A] mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl transition-transform duration-500 group-hover:rotate-12">biotech</span> Ultra Low Dose
+                                </h3>
+<p class="font-body text-sm text-on-surface-variant">Funkcja wspierająca uzyskanie precyzyjnych obrazów 3D przy jak najniższej bezpiecznej dawce promieniowania.</p>
+</div>
+<div class="p-6 bg-surface-container-low rounded-lg transition-all duration-500 hover:scale-[1.02] hover:shadow-md hover:bg-surface-container-high group">
+<h3 class="font-headline font-bold text-[#C9B08A] mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-xl transition-transform duration-500 group-hover:scale-110">view_in_ar</span> CBCT, OPG i planowanie
+                                </h3>
+<p class="font-body text-sm text-on-surface-variant">Urządzenie wykorzystywane do obrazowania 3D, pantomogramu oraz precyzyjnego planowania leczenia chirurgicznego, implantologicznego i endodontycznego.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 text-center reveal">
+<h2 class="font-headline text-4xl font-extrabold mb-4">Precyzja w każdym detalu</h2>
+<p class="font-body text-on-surface-variant max-w-2xl mx-auto">Sprzęt dobrany tak, by wspierał jakość leczenia i spokojny przebieg wizyty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface p-10 rounded-xl relative overflow-hidden flex flex-col justify-between group reveal">
+<div class="relative z-10 max-w-md">
+<span class="font-label text-[10px] tracking-widest font-bold text-[#C9B08A] uppercase mb-2 block">Komfort &amp; Ergonomia</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Planmeca iClassic</h3>
+<p class="font-body text-on-surface-variant mb-6">Unit stomatologiczny z tapicerką Ultra Relax, wspierający wygodę pacjenta oraz ergonomię pracy lekarza podczas zabiegów.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-sm font-medium text-[#C9B08A] transition-transform duration-300 hover:translate-x-1">
+<span class="material-symbols-outlined text-base">check_circle</span> Komfortowa pozycja podczas leczenia
+                                </li>
+<li class="flex items-center gap-2 text-sm font-medium text-[#C9B08A] transition-transform duration-300 hover:translate-x-1">
+<span class="material-symbols-outlined text-base">check_circle</span> Płynna organizacja pracy przy fotelu
+                                </li>
+</ul>
+</div>
+<div class="absolute right-6 bottom-0 w-[38%] aspect-[4/5] opacity-25 group-hover:opacity-45 transition-all duration-1000 group-hover:scale-105">
+<img alt="Nowoczesny unit stomatologiczny GALA DENT" class="w-full h-full object-cover object-center rounded-xl" src="../gallery/treatment-chair.jpg"/>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between reveal stagger-1 transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group">
+<div>
+<span class="font-label text-[10px] tracking-widest font-bold text-primary-container uppercase mb-2 block">Skanowanie 3D</span>
+<h3 class="font-headline text-2xl font-bold mb-4 text-[#C9B08A]">3Shape Trios 5</h3>
+<p class="font-body text-primary-fixed-dim text-sm leading-relaxed">Bezprzewodowy skaner wewnątrzustny pozwalający projektować prace protetyczne i estetyczne z dużą dokładnością oraz bez klasycznych wycisków.</p>
+</div>
+<div class="mt-8 flex justify-center">
+<span class="material-symbols-outlined text-7xl opacity-50 transition-all duration-700 group-hover:opacity-100 group-hover:scale-110 text-[#C9B08A]">scanner</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-10 rounded-xl reveal transition-all duration-500 hover:shadow-lg group">
+<div class="bg-surface-container-lowest w-12 h-12 rounded-full flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+<span class="material-symbols-outlined text-[#C9B08A]">radiology</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Planmeca ProX</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Radiowizjografia punktowa wykonywana bezpośrednio na fotelu, zapewniająca szybką diagnostykę i wsparcie leczenia.</p>
+</div>
+<div class="md:col-span-2 bg-stone-900 text-stone-100 p-10 rounded-xl flex flex-col md:flex-row items-center gap-10 reveal stagger-1 transition-all duration-700 hover:bg-stone-800 group">
+<div class="flex-1">
+<span class="font-label text-[10px] tracking-widest font-bold text-stone-400 uppercase mb-2 block">Bezpieczeństwo Biologiczne</span>
+<h3 class="font-headline text-2xl font-bold mb-4">Melag Vacuclave 123</h3>
+<p class="font-body text-stone-400 text-sm leading-relaxed mb-6">Autoklaw odpowiadający za wysoki standard sterylizacji i bezpieczeństwa podczas codziennej pracy kliniki.</p>
+<div class="inline-flex items-center px-4 py-2 bg-stone-800 rounded-full text-xs font-bold text-stone-200 transition-all duration-300 group-hover:bg-[#C9B08A]/20 group-hover:text-[#C9B08A]">
+<span class="material-symbols-outlined text-base mr-2" style="font-variation-settings: 'FILL' 1;">verified</span> STANDARD STERYLIZACJI
+                            </div>
+</div>
+<div class="w-full md:w-[30%] aspect-[4/5] bg-stone-800 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Autoklaw Melag Vacuclave 123" class="w-full h-full object-cover opacity-50 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-70" src="../gallery/autoclave-melag.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-surface">
+<div class="max-w-5xl mx-auto px-8 text-center">
+<div class="bg-surface-container rounded-3xl p-12 md:p-20 relative overflow-hidden reveal">
+<div class="absolute top-0 left-0 w-32 h-32 bg-[#C9B08A]/5 rounded-full -translate-x-16 -translate-y-16 animate-pulse"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl md:text-4xl font-bold mb-6">Doświadcz stomatologii opartej na precyzji</h2>
+<p class="font-body text-on-surface-variant text-lg mb-10 max-w-2xl mx-auto">Zapraszamy na konsultację, podczas której pokażemy możliwości naszej diagnostyki 3D i zaplanujemy Twoje leczenie krok po kroku.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="bg-[#C9B08A] text-on-primary px-10 py-4 rounded-md font-headline font-bold text-lg transition-all duration-300 pulse-hover transform hover:-translate-y-1 shadow-md hover:shadow-xl active:scale-95" href="../index.html#/kontakt" target="_parent">Umów wizytę online</a>
+<a class="bg-surface-container-highest text-on-surface px-10 py-4 rounded-md font-headline font-bold text-lg transition-all duration-300 hover:bg-surface-variant transform hover:-translate-y-1 shadow-sm hover:shadow-md" href="tel:+48793100567">Zadzwoń: 793 100 567</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#f5f4ee] dark:bg-[#121210] w-full rounded-t-3xl mt-20 transition-colors duration-300">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-12 py-16 font-['Plus_Jakarta_Sans'] text-sm leading-relaxed reveal">
+<div class="space-y-4">
+<img alt="Logo GALA DENT" class="block w-full max-w-[220px] h-auto" src="../brand/gala-dent-logo.png"/>
+<p class="text-[#6f5a4c] dark:text-[#a09a90]">© 2024 GALA DENT. Wszelkie prawa zastrzeżone.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<span class="font-headline text-sm font-bold text-[#6f5b3b] dark:text-[#C9B08A]">Klinika</span>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors" href="../index.html#/o-klinice" target="_parent">O Klinice</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors underline font-semibold" href="../index.html#/sprzet" target="_parent">Sprzęt</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+</div>
+<div class="flex flex-col space-y-3">
+<span class="font-headline text-sm font-bold text-[#6f5b3b] dark:text-[#C9B08A]">Prawo</span>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors" href="../index.html#/kontakt" target="_parent">Polityka Prywatności</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors" href="../index.html#/kontakt" target="_parent">Regulamin</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-headline text-sm font-bold text-[#6f5b3b] dark:text-[#C9B08A]">Kontakt</span>
+<div class="text-[#6f5a4c] dark:text-[#a09a90]">
+<p>ul. Główna 2B/G7, Borówiec</p>
+<p>793 100 567</p>
+<p>pacjenci@galadent.pl</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add('shadow-md');
+        } else {
+            navbar.classList.remove('shadow-md');
+        }
+    });
+</script>
+</body></html>
