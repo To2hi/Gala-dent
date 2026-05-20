@@ -256,9 +256,13 @@
             <p class="text-[11px] uppercase tracking-[0.18em] text-[#8a7357] font-semibold">Potrzebujesz wyceny?</p>
             <p class="text-sm font-bold text-[#5f472f]">Umów się na konsultację i plan leczenia</p>
           </div>
-          <div class="ml-auto flex items-center gap-3">
+          <div class="ml-auto flex items-center gap-4">
             <a class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#6f5b3b] text-white transition-all hover:-translate-y-0.5 hover:opacity-95 sm:hidden" href="tel:+48793100567"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span><span class="sr-only">Zadzwoń</span></a>
             <a class="rounded-full bg-[#6f5b3b] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:opacity-95 sm:px-8" href="../index.html#/kontakt" target="_parent">Zarezerwuj wizytę</a>
+            <a class="group hidden items-center gap-3 font-label text-sm font-bold uppercase tracking-widest text-[#5f472f] transition-colors hover:text-[#6f5b3b] md:inline-flex" href="tel:+48793100567">
+              <span class="material-symbols-outlined transition-transform duration-300 group-hover:rotate-12">call</span>
+              793 100 567
+            </a>
           </div>
         </div>
       </div>
@@ -579,7 +583,6 @@
 
       const renderImplantologia = () => {
         const category = categoryMap.implantologia;
-        const [lead, ...rest] = category.items;
         return `
           <section id="implantologia" class="scroll-mt-36 reveal">
             <div class="rounded-2xl border border-[#d0c5b8]/20 bg-[#f5f4ee] p-8 lg:p-10">
@@ -589,14 +592,8 @@
                   <span class="material-symbols-outlined text-[#6f5b3b]">${category.icon}</span>
                 </div>
               </div>
-              <div class="rounded-[1.5rem] bg-[#6f5b3b] p-6 text-white">
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <h3 class="font-headline text-xl font-bold">${lead[0]}</h3>
-                  <span class="text-2xl font-bold whitespace-nowrap">${lead[1]}</span>
-                </div>
-              </div>
-              <div class="mt-6">
-                ${rest.map((item) => priceRow(item)).join("")}
+              <div>
+                ${category.items.map((item) => priceRow(item)).join("")}
               </div>
               ${renderDisclaimer(false)}
             </div>
