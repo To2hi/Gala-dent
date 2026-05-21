@@ -1,0 +1,42 @@
+/*
+Theme Name: GALA DENT
+Theme URI: https://galadent.pl/
+Author: Codex for GALA DENT
+Description: Motyw WordPress oparty na obecnej statycznej stronie GALA DENT.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.0
+Text Domain: gala-dent
+*/
+
+html {
+  background: #fbf9f3;
+}
+
+body {
+  margin: 0;
+}
+
+body.admin-bar nav.fixed {
+  top: 32px;
+}
+
+@media (max-width: 782px) {
+  body.admin-bar nav.fixed {
+    top: 46px;
+  }
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}

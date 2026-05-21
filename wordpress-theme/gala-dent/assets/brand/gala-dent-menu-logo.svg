@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 132" role="img" aria-labelledby="title desc">
+  <title id="title">GALA DENT</title>
+  <desc id="desc">Poziome logo GALA DENT z ikona implantu po lewej stronie.</desc>
+  <defs>
+    <filter id="softShadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2.4" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+    <style>
+      .logo-fill {
+        fill: #ffffff;
+        stroke: rgba(188, 188, 188, 0.72);
+        stroke-width: 1.1;
+        stroke-linejoin: round;
+      }
+
+      .wordmark {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 92px;
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+  <g filter="url(#softShadow)">
+    <g class="logo-fill" transform="translate(0 2) scale(0.72)">
+      <path d="M34 16c-9.4 0-16 6.3-17.3 15.2C14.9 43.8 17.9 56.6 23 69.1c2.6 6.1 8.5 10.1 15.1 10.1h25.5c6.6 0 12.5-4 15.1-10.1 5.1-12.5 8.1-25.3 6.3-37.9C83.6 22.3 77 16 67.6 16c-6.8 0-11.5 2-17.2 4.2-5.3 2.1-11.2 2.1-16.1 0C44.3 18 40.5 16 34 16Z"/>
+      <path d="M27.8 86.3c0-3.2 2.2-5.8 5.4-6.4l36.6-7.3c4.1-.8 7.9 2.3 7.7 6.5l-.2 4.6c-.1 3-2.2 5.6-5.2 6.2l-36.5 7.7c-4.1.9-7.8-2.3-7.8-6.4Z"/>
+      <path d="M35.2 108c0-2.9 2-5.4 4.8-6l30.1-6.8c3.8-.9 7.4 2.1 7.2 6l-.1 4.1c-.1 2.8-2 5.2-4.7 5.9l-30.1 7.2c-3.9.9-7.2-2-7.2-6Z"/>
+      <path d="M41.6 127.8c0-2.5 1.7-4.7 4.1-5.3l23.4-6.2c3.4-.9 6.6 1.7 6.4 5.2l-.1 3.1c-.1 2.4-1.7 4.5-4.1 5.1l-23.4 6.6c-3.4 1-6.3-1.6-6.3-5.1Z"/>
+      <path d="M47.6 146.1c0-2.2 1.5-4.1 3.6-4.7l16.7-4.8c3.1-.9 6 1.5 5.7 4.7l-.1 2.4c-.2 2.2-1.7 4-3.8 4.6l-16.5 5.1c-3.1 1-5.6-1.4-5.6-4.5Z"/>
+      <path d="M54.8 161.5c0-1.9 1.2-3.5 3-4l10.2-3.1c2.8-.8 5.2 1.3 4.8 4.1-.9 6.8-4.8 11.9-9.6 11.9-5.2 0-8.4-4.1-8.4-8.9Z"/>
+    </g>
+    <text x="88" y="103" class="logo-fill wordmark" paint-order="stroke fill">GALA DENT</text>
+  </g>
+</svg>

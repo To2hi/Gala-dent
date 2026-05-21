@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GALA DENT - Oferta i cennik</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#d0c5b8",
+              "on-background": "#1b1c19",
+              "surface-container-low": "#f5f4ee",
+              "surface-container-highest": "#e3e3dd",
+              "surface-container": "#efeee8",
+              "surface-variant": "#e3e3dd",
+              "on-surface-variant": "#4d463c",
+              "background": "#fbf9f3",
+              "on-surface": "#1b1c19",
+              "primary": "#6f5b3b",
+              "primary-container": "#C9B08A",
+              "brand-amber": "#C9B08A"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      .font-headline {
+        font-family: "Manrope", sans-serif;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1), transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .soft-shadow {
+        box-shadow: 0 22px 44px rgba(77, 70, 60, 0.06);
+      }
+
+      .pricing-carousel {
+        position: relative;
+      }
+
+      .pricing-slide {
+        display: none;
+      }
+
+      .pricing-slide.is-active {
+        display: block;
+        animation: pricing-fade 0.28s ease;
+      }
+
+      .pricing-slide > * {
+        width: min(1120px, 100%);
+        margin-inline: auto;
+      }
+
+      @keyframes pricing-fade {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .pricing-pin {
+        position: relative;
+      }
+
+      .category-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.65rem;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.2;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 250, 242, 0.92);
+        background: linear-gradient(180deg, rgba(255, 253, 248, 0.97) 0%, rgba(245, 238, 228, 0.94) 100%);
+        box-shadow: 0 14px 28px rgba(61, 52, 40, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        padding: 0.75rem 1.05rem;
+        color: #5f4b34;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .category-link .material-symbols-outlined {
+        font-size: 1.15rem;
+      }
+
+      .category-link:hover {
+        transform: translateY(-1px);
+        border-color: rgba(238, 227, 210, 0.98);
+        background: linear-gradient(180deg, rgba(255, 254, 250, 1) 0%, rgba(248, 241, 231, 0.98) 100%);
+        box-shadow: 0 18px 32px rgba(61, 52, 40, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      }
+
+      .category-link.is-active {
+        background: linear-gradient(180deg, #fffdf9 0%, #f1e3cd 100%);
+        color: #5b452a;
+        border-color: rgba(226, 204, 171, 0.98);
+        box-shadow: 0 20px 36px rgba(77, 70, 60, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.92);
+      }
+
+      .price-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(208, 197, 184, 0.3);
+      }
+
+      .price-row:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .split-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .split-row .line {
+        flex: 1 1 auto;
+        border-bottom: 1px dotted rgba(126, 118, 107, 0.65);
+      }
+
+      @media (max-width: 767px) {
+        .category-link {
+          flex: 1 1 calc(50% - 0.375rem);
+          justify-content: flex-start;
+        }
+
+        .price-row,
+        .split-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .split-row .line {
+          display: none;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .category-link {
+          flex-basis: 100%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .pricing-pin {
+          position: sticky;
+          top: 9rem;
+          z-index: 20;
+        }
+      }
+    
+      details.service-accordion summary::-webkit-details-marker { display: none; }
+      details.service-accordion[open] { box-shadow: 0 18px 40px rgba(77,70,60,0.08); }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface overflow-x-hidden selection:bg-primary-container/40">
+    <nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-[#6f5b3b] backdrop-blur-xl shadow-[0_20px_52px_rgba(55,41,24,0.34)]">
+<div class="mx-auto flex min-h-[88px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+<a class="shrink-0 transition-all duration-300 hover:opacity-90" href="../index.html#/" target="_parent"><img alt="Logo GALA DENT" class="block h-[28px] w-auto max-w-[180px] object-contain sm:h-[32px] sm:max-w-[220px] md:h-[40px] md:max-w-[320px]" src="../brand/gala-dent-menu-logo-transparent.png"/></a>
+<div class="hidden items-center gap-8 lg:gap-10 md:flex">
+<a class="font-['Manrope'] text-base font-medium tracking-tight text-white/80 transition-all duration-300 hover:text-white" href="../index.html#/o-klinice" target="_parent">O Klinice</a><a class="border-b-2 border-white/90 pb-1 font-['Manrope'] text-base font-semibold tracking-tight text-white transition-all duration-300" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a><a class="font-['Manrope'] text-base font-medium tracking-tight text-white/80 transition-all duration-300 hover:text-white" href="../index.html#/sprzet" target="_parent">Sprzęt</a><a class="font-['Manrope'] text-base font-medium tracking-tight text-white/80 transition-all duration-300 hover:text-white" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+</div>
+<div class="flex items-center gap-3">
+<a class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all duration-300 hover:bg-white/15 md:hidden" href="tel:+48793100567"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span><span class="sr-only">Zadzwoń</span></a>
+<a class="inline-flex items-center justify-center rounded-full bg-white px-4 py-3 font-label text-[11px] font-bold uppercase tracking-[0.18em] text-[#6f5b3b] transition-all duration-300 hover:bg-[#f8efe3] active:scale-95 sm:px-6 sm:text-xs" href="../index.html#/kontakt" target="_parent">Umów wizytę</a>
+</div>
+</div>
+<div class="border-t border-white/10 px-4 pb-4 pt-2 md:hidden">
+<div class="mx-auto flex max-w-7xl flex-wrap gap-2 overflow-x-auto">
+<a class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition-all duration-300 hover:bg-white/15" href="../index.html#/o-klinice" target="_parent">O Klinice</a><a class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#6f5b3b] transition-all duration-300" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a><a class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition-all duration-300 hover:bg-white/15" href="../index.html#/sprzet" target="_parent">Sprzęt</a><a class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition-all duration-300 hover:bg-white/15" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+</div>
+</div>
+</nav>
+
+    <main class="pt-44 pb-16 md:pt-32">
+      <header class="max-w-[1440px] mx-auto px-8 lg:px-10 mb-16 lg:mb-20 text-center reveal">
+        <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#6f5b3b]">Najczęściej wybierane usługi</h1>
+      </header>
+
+      <section class="lg:sticky lg:top-24 z-40 bg-[#fbf7f0] border-y border-[#d0c5b8]/35 shadow-[0_18px_32px_rgba(77,70,60,0.08)] mb-4">
+        <div class="max-w-[1440px] mx-auto px-8 lg:px-10">
+          <div class="flex flex-wrap justify-center gap-3 py-4 lg:py-5 text-sm font-semibold text-[#6f5b3b]" id="category-links"></div>
+        </div>
+      </section>
+
+      <section class="max-w-[1440px] mx-auto px-8 lg:px-10 reveal">
+        <div class="pricing-pin" id="pricing-pin">
+          <div class="pricing-carousel no-scrollbar" id="pricing-layout"></div>
+        </div>
+      </section>
+
+      <section class="hidden" aria-hidden="true">
+        <div class="mb-8 reveal">
+          <h2 class="font-headline text-3xl md:text-4xl font-bold text-[#6f5b3b] mb-3">Pozostałe kategorie</h2>
+          <p class="text-[#6f5a4c] max-w-3xl">Pełna oferta nadal jest dostępna, ale schowaliśmy ją do bardziej uporządkowanych sekcji, żeby strona nie atakowała pacjenta ścianą danych.</p>
+        </div>
+        <div class="space-y-5" id="more-sections"></div>
+      </section>
+
+      <div class="fixed bottom-5 left-1/2 z-50 hidden w-[calc(100%-1.5rem)] max-w-4xl -translate-x-1/2 rounded-full border border-[#ddcfbb] bg-[#faf5ed] px-4 py-4 shadow-[0_22px_48px_rgba(54,42,26,0.24)] ring-1 ring-white/70 md:block md:bottom-6 md:w-[calc(100%-2rem)] md:px-6">
+        <div class="flex items-center justify-between gap-4">
+          <div class="hidden sm:block">
+            <p class="text-[11px] uppercase tracking-[0.18em] text-[#8a7357] font-semibold">Potrzebujesz wyceny?</p>
+            <p class="text-sm font-bold text-[#5f472f]">Umów się na konsultację i plan leczenia</p>
+          </div>
+          <div class="ml-auto flex items-center gap-4">
+            <a class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#6f5b3b] text-white transition-all hover:-translate-y-0.5 hover:opacity-95 sm:hidden" href="tel:+48793100567"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span><span class="sr-only">Zadzwoń</span></a>
+            <a class="rounded-full bg-[#6f5b3b] px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:opacity-95 sm:px-8" href="../index.html#/kontakt" target="_parent">Zarezerwuj wizytę</a>
+            <a class="group hidden items-center gap-3 font-label text-sm font-bold uppercase tracking-widest text-[#5f472f] transition-colors hover:text-[#6f5b3b] md:inline-flex" href="tel:+48793100567">
+              <span class="material-symbols-outlined transition-transform duration-300 group-hover:rotate-12">call</span>
+              793 100 567
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#f5f4ee] mt-10 pb-28 sm:pb-20">
+      <div class="max-w-[1440px] mx-auto px-8 lg:px-10 py-16">
+        <div class="flex flex-col lg:flex-row justify-between items-start gap-12 mb-10">
+          <div>
+            <img alt="Logo GALA DENT" class="block w-full max-w-[220px] h-auto mb-6" src="../brand/gala-dent-logo.png" />
+            <div class="grid sm:grid-cols-2 gap-10 text-sm text-[#6f5a4c]">
+              <div>
+                <h4 class="font-bold text-[#6f5b3b] mb-2">Klinika</h4>
+                <p>ul. Główna 2B/G7</p>
+                <p>62-023 Borówiec</p>
+                <p>Galeria Centrum Borówiec, 1 piętro</p>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#6f5b3b] mb-2">Kontakt</h4>
+                <p>+48 793 100 567</p>
+                <p>pacjenci@galadent.pl</p>
+                <p>Pon - Pt, 8:00 - 20:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-10 text-sm">
+            <div class="space-y-4">
+              <a class="block text-[#6f5a4c]/70 hover:text-[#6f5b3b] transition-colors" href="../index.html#/o-klinice" target="_parent">O Klinice</a>
+              <a class="block text-[#6f5a4c]/70 hover:text-[#6f5b3b] transition-colors" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a>
+            </div>
+            <div class="space-y-4">
+              <a class="block text-[#6f5a4c]/70 hover:text-[#6f5b3b] transition-colors" href="../index.html#/sprzet" target="_parent">Sprzęt</a>
+              <a class="block text-[#6f5a4c]/70 hover:text-[#6f5b3b] transition-colors" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-[#d0c5b8]/35 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#6f5a4c]/70">
+          <span>© 2024 GALA DENT. Wszelkie prawa zastrzeżone.</span>
+          <div class="flex items-center gap-5">
+            <a class="hover:text-[#6f5b3b] transition-colors" href="../index.html#/kontakt" target="_parent">Polityka prywatności</a>
+            <a class="hover:text-[#6f5b3b] transition-colors" href="../index.html#/kontakt" target="_parent">Regulamin</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const disclaimerText =
+        "Wskazane ceny są poglądowe i mogą różnić się po indywidualnym przeanalizowaniu każdego przypadku klinicznego przez lekarza oraz w trakcie leczenia.";
+
+      const categories = [
+        {
+          id: "radiologia",
+          label: "Radiologia",
+          title: "Radiologia",
+          icon: "biotech",
+          description:
+            "Nowoczesna diagnostyka obrazowa to fundament precyzyjnego planowania leczenia. Korzystamy z bezpiecznych rozwiązań cyfrowych.",
+          notes: {
+            "Pantomogram (OPG)": "Zdjęcie panoramiczne wszystkich zębów",
+            "RVG punktowe": "Precyzyjne zdjęcie cyfrowe pojedynczego zęba",
+            "Tomografia (CBCT) oba łuki": "Obrazowanie 3D dla najwyższej precyzji",
+            "Tomografia (CBCT) pojedynczy łuk": "Obrazowanie 3D dla jednego łuku",
+            "Tomografia endo": "Badanie wspierające planowanie leczenia kanałowego",
+            "Tomografia odcinkowa (kilka zębów)": "Obrazowanie wybranego obszaru"
+          },
+          items: [
+            ["Pantomogram (OPG)", "100,00 zł"],
+            ["RVG punktowe", "50,00 zł"],
+            ["Tomografia (CBCT) oba łuki", "300,00 zł"],
+            ["Tomografia (CBCT) pojedynczy łuk", "200,00 zł"],
+            ["Tomografia endo", "150,00 zł"],
+            ["Tomografia odcinkowa (kilka zębów)", "150,00 zł"]
+          ]
+        },
+        {
+          id: "zachowawcza",
+          label: "Zachowawcza",
+          title: "Stomatologia zachowawcza",
+          icon: "health_and_safety",
+          image: "../gallery/surgery-team.webp",
+          items: [
+            ["Wypełnienie małe", "350,00 zł"],
+            ["Wypełnienie średnie", "400,00 zł"],
+            ["Wypełnienie duże", "450,00 zł"],
+            ["Leczenie nadwrażliwości (pojedynczy kwadrant)", "100,00 zł"],
+            ["Leczenie nadwrażliwości (pojedynczy łuk)", "150,00 zł"],
+            ["Leczenie nadwrażliwości (oba łuki)", "200,00 zł"]
+          ]
+        },
+        {
+          id: "endodoncja",
+          label: "Endodoncja",
+          title: "Endodoncja",
+          icon: "psychiatry",
+          items: [
+            ["Leczenie endodontyczne (1 kanał)", "800,00 zł"],
+            ["Leczenie endodontyczne (2 kanały)", "1000,00 zł"],
+            ["Leczenie endodontyczne (3 kanały)", "1200,00 zł"],
+            ["Leczenie endodontyczne (4 kanały)", "1400,00 zł"],
+            ["Odbudowa korony po leczeniu endodontycznym", "550,00 zł"],
+            ["Odbudowa korony wzmocniona włóknem szklanym", "1200,00 zł"],
+            ["Odbudowa zniszczonej korony przed leczeniem kanałowym", "250,00 zł"],
+            ["Opatrunek przy amputacji żywej miazgi (Biodentine)", "500,00 zł"],
+            ["Pokrycie bezpośrednie miazgi przy skaleczeniu lub obnażeniu (Biodentine)", "500,00 zł"],
+            ["Usunięcie starego wypełnienia z kanału (za kanał)", "100,00 zł"],
+            ["Dodatkowy opatrunek w kanałach (trzecia i każda kolejna wizyta)", "300,00 zł"],
+            ["Dewitalizacja miazgi", "300,00 zł"],
+            ["Otwarcie martwego zęba", "300,00 zł"]
+          ]
+        },
+        {
+          id: "estetyka",
+          label: "Estetyka",
+          title: "Estetyka",
+          icon: "auto_awesome",
+          items: [
+            ["Bonding (pojedynczy ząb)", "800,00 zł"],
+            ["Wybielanie gabinetowe (1-wizytowe)", "1200,00 zł"],
+            ["Wybielanie nakładkowe (nakładki + preparat wybielający)", "1400,00 zł"],
+            ["Szyny do wybielania", "800,00 zł"],
+            ["Preparat wybielający (zestaw)", "600,00 zł"],
+            ["Wybielanie martwego zęba (pierwsza wizyta)", "350,00 zł"],
+            ["Wybielanie martwego zęba (kolejna wizyta)", "200,00 zł"]
+          ]
+        },
+        {
+          id: "konsultacje",
+          label: "Konsultacje",
+          title: "Konsultacje",
+          icon: "forum",
+          items: [
+            ["Badanie jamy ustnej z diagramem (przegląd)", "150,00 zł"],
+            ["Przegląd z diagramem jako dodatek do leczenia", "50,00 zł"],
+            ["Badanie jamy ustnej z diagramem i OPG", "250,00 zł"],
+            ["Konsultacja bez OPG i CBCT", "150,00 zł"],
+            ["Konsultacja z OPG", "200,00 zł"],
+            ["Konsultacja z CBCT", "350,00 zł"],
+            ["Konsultacja z wypisaniem recepty", "100,00 zł"]
+          ]
+        },
+        {
+          id: "implantologia",
+          label: "Implantologia",
+          title: "Implantologia",
+          icon: "medical_services",
+          items: [
+            ["Wszczepienie implantu", "3500,00 zł"],
+            ["Korona na implancie", "3500,00 zł"],
+            ["Wszczepienie implantu z koroną tymczasową", "4000,00 zł"],
+            ["Odsłonięcie implantu ze śrubą gojącą", "500,00 zł"],
+            ["Proteza akrylowa na 2 implantach", "7000,00 zł"],
+            ["Proteza akrylowa na 4 implantach", "9000,00 zł"],
+            ["Materiał kościozastępczy", "500,00 zł"]
+          ]
+        },
+        {
+          id: "profilaktyka",
+          label: "Profilaktyka",
+          title: "Profilaktyka",
+          icon: "spa",
+          items: [
+            ["Higienizacja", "390,00 zł"],
+            ["Instruktaż higieny z wybarwianiem", "150,00 zł"],
+            ["Lakierowanie zębów (oba łuki)", "250,00 zł"],
+            ["Lakierowanie zębów (pojedynczy łuk)", "150,00 zł"],
+            ["Skaling ultradźwiękowy", "250,00 zł"]
+          ]
+        },
+        {
+          id: "protetyka",
+          label: "Protetyka",
+          title: "Protetyka",
+          icon: "dentistry",
+          items: [
+            ["Proteza akrylowa całkowita", "2800,00 zł"],
+            ["Proteza akrylowa częściowa", "2800,00 zł"],
+            ["Proteza akrylowa (1-2 zęby)", "1000,00 zł"],
+            ["Proteza szkieletowa", "3400,00 zł"],
+            ["Proteza acetalowa", "3200,00 zł"],
+            ["Proteza poliamidowa Deflex", "3200,00 zł"],
+            ["Podścielenie protezy", "600,00 zł"],
+            ["Naprawka (lub dostawienie 1 elementu)", "300,00 zł"],
+            ["Naprawka: dostawienie każdego kolejnego elementu", "150,00 zł"],
+            ["Naprawka: odcięcie klamry", "50,00 zł"],
+            ["Wymiana gumki w protezie szkieletowej (1 szt.)", "250,00 zł"],
+            ["Siatka wzmacniająca protezę akrylową (dopłata)", "500,00 zł"],
+            ["Szyna korygująca okluzję", "800,00 zł"],
+            ["Szyna relaksacyjna", "600,00 zł"],
+            ["Szyna ochronna", "600,00 zł"],
+            ["Korekta protezy (wykonanej w innym gabinecie)", "100,00 zł"],
+            ["Wkład z włókna szklanego", "800,00 zł"],
+            ["Wkład metalowy lany", "1000,00 zł"],
+            ["Szynowanie zębów włóknem szklanym (pojedynczy ząb)", "400,00 zł"],
+            ["Cementowanie pojedynczej korony", "200,00 zł"]
+          ]
+        },
+        {
+          id: "protetyka-cyfrowa",
+          label: "Protetyka cyfrowa",
+          title: "Protetyka cyfrowa",
+          icon: "precision_manufacturing",
+          items: [
+            ["Korona pełnoporcelanowa (lub punkt w moście)", "2200,00 zł"],
+            ["Korona pełnocyrkonowa (lub punkt w moście)", "2200,00 zł"],
+            ["Korona porcelanowa na metalu Sintron (lub punkt w moście)", "1800,00 zł"],
+            ["Licówka porcelanowa", "2200,00 zł"],
+            ["Licówka kompozytowa", "1200,00 zł"],
+            ["Most adhezyjny Maryland", "3800,00 zł"],
+            ["Inlay - onlay - overlay porcelanowy", "2000,00 zł"],
+            ["Inlay - onlay - overlay kompozytowy", "1200,00 zł"],
+            ["Korona tymczasowa PMMA (lub punkt w moście)", "400,00 zł"],
+            ["Proteza szkieletowa na zatrzaskach", "6000,00 zł"],
+            ["Projektowanie uśmiechu z przymiarką", "2000,00 zł"]
+          ]
+        },
+        {
+          id: "dziecieca",
+          label: "Dziecięca",
+          title: "Stomatologia dziecięca",
+          icon: "toys",
+          items: [
+            ["Wypełnienie w zębie mlecznym", "250,00 zł"],
+            ["Ekstrakcja zęba mlecznego przedniego", "250,00 zł"],
+            ["Ekstrakcja zęba mlecznego tylnego", "300,00 zł"],
+            ["Przegląd + lakierowanie (fluoryzacja)", "200,00 zł"],
+            ["Dewitalizacja zęba mlecznego", "250,00 zł"],
+            ["Otwarcie zęba mlecznego", "200,00 zł"],
+            ["Płukanie zęba mlecznego w leczeniu otwartym", "150,00 zł"],
+            ["Lakowanie bruzd (pojedynczy ząb)", "150,00 zł"],
+            ["Wizyta nieefektywna (brak współpracy)", "100,00 zł"]
+          ]
+        }
+      ];
+
+      const categoryMap = Object.fromEntries(categories.map((category) => [category.id, category]));
+      const displayOrder = [
+        "radiologia",
+        "zachowawcza",
+        "endodoncja",
+        "estetyka",
+        "konsultacje",
+        "implantologia",
+        "profilaktyka",
+        "protetyka",
+        "protetyka-cyfrowa",
+        "dziecieca"
+      ];
+
+      const categoryLinks = document.getElementById("category-links");
+      const pricingLayout = document.getElementById("pricing-layout");
+
+      const renderDisclaimer = (dark = false) => `
+        <p class="mt-8 text-sm leading-relaxed ${dark ? "text-white/70" : "text-[#6f5a4c]"}">
+          ${disclaimerText}
+        </p>
+      `;
+
+      const priceRow = (item, options = {}) => {
+        const note = options.noteMap?.[item[0]];
+        return `
+          <div class="price-row ${options.className || ""}">
+            <div>
+              <p class="font-semibold ${options.dark ? "text-white" : "text-on-surface"}">${item[0]}</p>
+              ${note ? `<p class="mt-1 text-xs ${options.dark ? "text-white/70" : "text-[#6f5a4c]/80"}">${note}</p>` : ""}
+            </div>
+            <span class="font-bold whitespace-nowrap ${options.dark ? "text-white" : "text-[#6f5b3b]"}">${item[1]}</span>
+          </div>
+        `;
+      };
+
+      const renderStandardSection = (category, options = {}) => {
+        const dark = Boolean(options.dark);
+        const rows = category.items.map((item) => priceRow(item, { dark })).join("");
+        const rowsLayout = `<div>${rows}</div>`;
+
+        return `
+          <section id="${category.id}" class="scroll-mt-36 reveal">
+            <div class="${dark ? "border border-[#6f5b3b] bg-[#6f5b3b] text-white" : "border border-[#d0c5b8]/30 bg-white text-on-surface soft-shadow"} rounded-2xl p-8 lg:p-10">
+              <div class="mb-8 flex items-start justify-between gap-4">
+                <h2 class="font-headline text-3xl font-bold tracking-tight lg:text-4xl ${dark ? "text-white" : "text-[#6f5b3b]"}">${category.title}</h2>
+                <div class="${dark ? "bg-white/10" : "bg-[#f6f1e8]"} flex h-14 w-14 shrink-0 items-center justify-center rounded-full shadow-sm">
+                  <span class="material-symbols-outlined ${dark ? "text-[#f4e5cd]" : "text-[#6f5b3b]"}">${category.icon}</span>
+                </div>
+              </div>
+              ${rowsLayout}
+              ${options.afterRows || ""}
+              ${renderDisclaimer(dark)}
+            </div>
+          </section>
+        `;
+      };
+
+      const renderRadiologia = () => {
+        const category = categoryMap.radiologia;
+        return `
+          <section id="radiologia" class="scroll-mt-36 reveal">
+            <div class="rounded-2xl bg-[#f5f4ee] p-8 lg:p-10">
+              <div class="flex flex-col items-start gap-10 md:flex-row lg:gap-12">
+                <div class="md:w-[31%]">
+                  <div class="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#6f5b3b]/6">
+                    <span class="material-symbols-outlined text-3xl text-[#6f5b3b]">${category.icon}</span>
+                  </div>
+                  <h2 class="mb-4 font-headline text-3xl font-bold tracking-tight text-[#6f5b3b] lg:text-4xl">${category.title}</h2>
+                  <p class="text-sm leading-relaxed text-[#6f5a4c] lg:text-base">${category.description}</p>
+                </div>
+                <div class="w-full rounded-2xl bg-white p-6 soft-shadow md:w-[69%] lg:p-8">
+                  <div class="space-y-6">
+                    ${category.items.map((item) => priceRow(item, { noteMap: category.notes })).join("")}
+                  </div>
+                </div>
+              </div>
+              ${renderDisclaimer(false)}
+            </div>
+          </section>
+        `;
+      };
+
+      const renderImplantologia = () => {
+        const category = categoryMap.implantologia;
+        return `
+          <section id="implantologia" class="scroll-mt-36 reveal">
+            <div class="rounded-2xl border border-[#d0c5b8]/20 bg-[#f5f4ee] p-8 lg:p-10">
+              <div class="mb-8 flex items-start justify-between gap-4">
+                <h2 class="font-headline text-3xl font-bold tracking-tight text-[#6f5b3b] lg:text-4xl">${category.title}</h2>
+                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/85 shadow-sm">
+                  <span class="material-symbols-outlined text-[#6f5b3b]">${category.icon}</span>
+                </div>
+              </div>
+              <div>
+                ${category.items.map((item) => priceRow(item)).join("")}
+              </div>
+              ${renderDisclaimer(false)}
+            </div>
+          </section>
+        `;
+      };
+
+      const renderCategory = (id) => {
+        switch (id) {
+          case "radiologia":
+            return renderRadiologia();
+          case "zachowawcza":
+            return renderStandardSection(categoryMap[id], {
+              afterRows: `
+                <div class="mt-8 overflow-hidden rounded-[1.5rem] border border-white/70 shadow-[0_20px_40px_rgba(77,70,60,0.08)]">
+                  <img alt="Zabieg w GALA DENT" class="aspect-[16/9] h-full w-full object-cover" src="${categoryMap[id].image}" />
+                </div>
+              `
+            });
+          case "endodoncja":
+            return renderStandardSection(categoryMap[id], { dark: true, singleColumn: true });
+          case "estetyka":
+            return renderStandardSection(categoryMap[id], { singleColumn: true });
+          case "konsultacje":
+            return renderStandardSection(categoryMap[id], { singleColumn: true });
+          case "implantologia":
+            return renderImplantologia();
+          case "profilaktyka":
+            return renderStandardSection(categoryMap[id], { singleColumn: true });
+          case "protetyka":
+          case "protetyka-cyfrowa":
+          case "dziecieca":
+            return renderStandardSection(categoryMap[id]);
+          default:
+            return "";
+        }
+      };
+
+      const slideDefinitions = displayOrder.map((id) => ({
+        slideId: `slide-${id}`,
+        categoryId: id
+      }));
+
+      const slideTargetMap = new Map(slideDefinitions.map((slide) => [slide.categoryId, slide.slideId]));
+
+      categoryLinks.innerHTML = displayOrder
+        .map((id) => {
+          const category = categoryMap[id];
+          return `
+            <button type="button" class="category-link" data-category="${id}" data-target="${slideTargetMap.get(id)}">
+              <span class="material-symbols-outlined">${category.icon}</span>
+              <span>${category.label}</span>
+            </button>
+          `;
+        })
+        .join("");
+
+      pricingLayout.innerHTML = slideDefinitions
+        .map(
+          (slide) => `
+            <article id="${slide.slideId}" class="pricing-slide" data-primary="${slide.categoryId}" aria-hidden="true">
+              ${renderCategory(slide.categoryId)}
+            </article>
+          `
+        )
+        .join("");
+
+      const slides = Array.from(pricingLayout.querySelectorAll(".pricing-slide"));
+      const categoryButtons = Array.from(categoryLinks.querySelectorAll(".category-link"));
+
+      const setActiveCategory = (categoryId) => {
+        categoryButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.category === categoryId);
+        });
+      };
+
+      const revealVisibleContent = (scope) => {
+        if (!scope) {
+          return;
+        }
+
+        scope.querySelectorAll(".reveal").forEach((element) => {
+          element.classList.add("active");
+        });
+      };
+
+      const setActiveSlide = (slideId, categoryId) => {
+        const activeSlide = document.getElementById(slideId);
+        if (!activeSlide) {
+          return;
+        }
+
+        slides.forEach((slide) => {
+          const isActive = slide.id === slideId;
+          slide.classList.toggle("is-active", isActive);
+          slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+        });
+
+        setActiveCategory(categoryId);
+        revealVisibleContent(activeSlide);
+      };
+
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const slideId = button.dataset.target;
+          if (!slideId) {
+            return;
+          }
+
+          setActiveSlide(slideId, button.dataset.category);
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+      setActiveSlide(slideDefinitions[0].slideId, slideDefinitions[0].categoryId);
+
+      window.addEventListener("load", () => {
+        document.querySelectorAll(".reveal").forEach((element) => {
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            element.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

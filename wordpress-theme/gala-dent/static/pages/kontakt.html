@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kontakt | GALA DENT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#d0c5b8",
+              "on-background": "#1b1c19",
+              "on-secondary-fixed-variant": "#564336",
+              "secondary-fixed": "#faddcb",
+              "on-secondary": "#ffffff",
+              "surface-container-low": "#f5f4ee",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "error": "#ba1a1a",
+              "surface-container-highest": "#e3e3dd",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#efeee8",
+              "on-secondary-fixed": "#27180d",
+              "on-primary-container": "#544325",
+              "tertiary": "#5f5e5e",
+              "inverse-surface": "#30312d",
+              "inverse-primary": "#ddc39c",
+              "secondary": "#6f5a4c",
+              "on-primary-fixed": "#271902",
+              "surface": "#fbf9f3",
+              "secondary-fixed-dim": "#ddc1b0",
+              "on-primary-fixed-variant": "#564426",
+              "primary-fixed-dim": "#ddc39c",
+              "on-secondary-container": "#745e50",
+              "surface-variant": "#e3e3dd",
+              "surface-container-high": "#e9e8e2",
+              "surface-bright": "#fbf9f3",
+              "on-surface-variant": "#4d463c",
+              "surface-dim": "#dbdad4",
+              "on-tertiary-fixed-variant": "#474746",
+              "outline": "#7e766b",
+              "background": "#fbf9f3",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#1b1c1c",
+              "primary-fixed": "#fadfb6",
+              "inverse-on-surface": "#f2f1eb",
+              "tertiary-fixed": "#e4e2e1",
+              "primary": "#6f5b3b",
+              "tertiary-container": "#b5b3b3",
+              "surface-tint": "#6f5b3b",
+              "on-tertiary-container": "#464545",
+              "on-surface": "#1b1c19",
+              "secondary-container": "#f7dac8",
+              "primary-container": "#C9B08A",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "brand-gold": "#C9B08A"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c19;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-link-hover {
+            position: relative;
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+
+        @keyframes pulse-soft {
+            0% { box-shadow: 0 0 0 0 rgba(201, 176, 138, 0.2); }
+            70% { box-shadow: 0 0 0 10px rgba(201, 176, 138, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(201, 176, 138, 0); }
+        }
+        .btn-pulse:hover {
+            animation: pulse-soft 2s infinite;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-[#6f5b3b] backdrop-blur-xl shadow-[0_20px_52px_rgba(55,41,24,0.34)]">
+<div class="mx-auto flex min-h-[88px] max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+<a class="shrink-0 transition-all duration-300 hover:opacity-90" href="../index.html#/" target="_parent"><img alt="Logo GALA DENT" class="block h-[28px] w-auto max-w-[180px] object-contain sm:h-[32px] sm:max-w-[220px] md:h-[40px] md:max-w-[320px]" src="../brand/gala-dent-menu-logo-transparent.png"/></a>
+<div class="hidden items-center gap-8 lg:gap-10 md:flex">
+<a class="font-['Manrope'] text-base font-medium tracking-tight text-white/80 transition-all duration-300 hover:text-white" href="../index.html#/o-klinice" target="_parent">O Klinice</a><a class="font-['Manrope'] text-base font-medium tracking-tight text-white/80 transition-all duration-300 hover:text-white" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a><a class="font-['Manrope'] text-base font-medium tracking-tight text-white/80 transition-all duration-300 hover:text-white" href="../index.html#/sprzet" target="_parent">Sprzęt</a><a class="border-b-2 border-white/90 pb-1 font-['Manrope'] text-base font-semibold tracking-tight text-white transition-all duration-300" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+</div>
+<div class="flex items-center gap-3">
+<a class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-all duration-300 hover:bg-white/15 md:hidden" href="tel:+48793100567"><span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">call</span><span class="sr-only">Zadzwoń</span></a>
+<a class="inline-flex items-center justify-center rounded-full bg-white px-4 py-3 font-label text-[11px] font-bold uppercase tracking-[0.18em] text-[#6f5b3b] transition-all duration-300 hover:bg-[#f8efe3] active:scale-95 sm:px-6 sm:text-xs" href="../index.html#/kontakt" target="_parent">Umów wizytę</a>
+</div>
+</div>
+<div class="border-t border-white/10 px-4 pb-4 pt-2 md:hidden">
+<div class="mx-auto flex max-w-7xl flex-wrap gap-2 overflow-x-auto">
+<a class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition-all duration-300 hover:bg-white/15" href="../index.html#/o-klinice" target="_parent">O Klinice</a><a class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition-all duration-300 hover:bg-white/15" href="../index.html#/oferta" target="_parent">Oferta i Cennik</a><a class="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 transition-all duration-300 hover:bg-white/15" href="../index.html#/sprzet" target="_parent">Sprzęt</a><a class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#6f5b3b] transition-all duration-300" href="../index.html#/kontakt" target="_parent">Kontakt</a>
+</div>
+</div>
+</nav>
+<main class="pt-44 pb-24 md:pt-32">
+<div class="max-w-7xl mx-auto px-8">
+<header class="mb-20 max-w-3xl reveal">
+<h1 class="font-headline text-6xl font-extrabold tracking-tighter text-on-surface mb-6">Kontakt</h1>
+<p class="font-body text-xl text-on-surface-variant leading-relaxed">
+                    Zapraszamy do świata nowoczesnej stomatologii, gdzie precyzja spotyka się z komfortem. Pozwól nam zadbać o Twój uśmiech w atmosferze spokoju i dobrej energii.
+                </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-5 space-y-16">
+<div class="grid grid-cols-1 gap-8">
+<section class="bg-surface-container-low p-8 rounded-xl min-h-[190px] flex flex-col justify-between border-l-4 border-brand-gold reveal hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1">
+<h2 class="font-headline text-sm font-bold tracking-widest uppercase text-brand-gold mb-4">Adres Kliniki</h2>
+<p class="font-body text-lg text-on-surface font-semibold">GALA DENT SP. Z O.O.<br/>ul. Główna 2B/G7<br/>62-023 Borówiec<br/>Budynek Galerii CENTRUM BORÓWIEC<br/>1 piętro</p>
+<a class="mt-4 inline-flex items-center text-brand-gold font-label text-sm hover:underline group" href="https://www.google.com/maps/search/?api=1&amp;query=Gala+Dent,+ul.+Glowna+2B%2FG7,+62-023+Borowiec" rel="noopener noreferrer" target="_blank">
+<span>Pokaż w Mapach</span>
+<span class="material-symbols-outlined ml-2 text-base transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">open_in_new</span>
+</a>
+</section>
+<section class="bg-surface-container-low p-8 rounded-xl min-h-[190px] flex flex-col justify-between reveal hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1" style="transition-delay: 100ms;">
+<h2 class="font-headline text-sm font-bold tracking-widest uppercase text-brand-gold mb-4">Bezpośredni Kontakt</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-brand-gold group-hover:scale-110 transition-transform">call</span>
+<span class="font-body text-lg text-on-surface group-hover:text-brand-gold transition-colors">793 100 567</span>
+</div>
+<div class="flex items-center gap-4 group cursor-pointer">
+<span class="material-symbols-outlined text-brand-gold group-hover:scale-110 transition-transform">mail</span>
+<span class="font-body text-lg text-on-surface group-hover:text-brand-gold transition-colors">pacjenci@galadent.pl</span>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low p-8 rounded-xl min-h-[190px] flex flex-col justify-between reveal hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1" style="transition-delay: 150ms;">
+<h2 class="font-headline text-sm font-bold tracking-widest uppercase text-brand-gold mb-4">Konto bankowe</h2>
+<div class="space-y-2">
+<p class="font-body text-lg text-on-surface font-semibold">PKO BP</p>
+<p class="font-body text-lg text-on-surface font-semibold leading-relaxed">39 1020 4027 0000 1902 2105 6144</p>
+</div>
+</section>
+<section class="bg-surface-container-low p-8 rounded-xl min-h-[190px] flex flex-col justify-between reveal hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1" style="transition-delay: 200ms;">
+<h2 class="font-headline text-sm font-bold tracking-widest uppercase text-brand-gold mb-4">Godziny Otwarcia</h2>
+<div class="space-y-2 font-body text-base px-1">
+<p class="text-on-surface-variant">Klinika czynna:</p>
+<p class="font-semibold text-on-surface">PON - PT</p>
+<p class="font-semibold text-on-surface">8:00 - 20:00</p>
+</div>
+</section>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest p-10 lg:p-16 rounded-xl shadow-[0_20px_40px_rgba(111,91,59,0.04)] reveal" style="transition-delay: 300ms;">
+<div class="mb-12">
+<h3 class="font-headline text-3xl font-bold text-on-surface mb-2">Skontaktuj się z nami</h3>
+<p class="font-body text-on-surface-variant">Nasz zespół skontaktuje się z Tobą tak szybko, jak to możliwe, aby potwierdzić termin.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+<div class="relative group">
+<label class="block font-label text-xs font-bold text-brand-gold uppercase tracking-widest mb-2 transition-colors group-focus-within:text-secondary">Imię i Nazwisko</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-brand-gold px-0 py-3 transition-all font-body text-lg placeholder:text-stone-300" placeholder="Jan Kowalski" type="text"/>
+</div>
+<div class="relative group">
+<label class="block font-label text-xs font-bold text-brand-gold uppercase tracking-widest mb-2 transition-colors group-focus-within:text-secondary">Numer Telefonu</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-brand-gold px-0 py-3 transition-all font-body text-lg placeholder:text-stone-300" placeholder="793 100 567" type="tel"/>
+</div>
+<div class="relative group">
+<label class="block font-label text-xs font-bold text-brand-gold uppercase tracking-widest mb-2 transition-colors group-focus-within:text-secondary">Adres E-mail</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-brand-gold px-0 py-3 transition-all font-body text-lg placeholder:text-stone-300" placeholder="email@przyklad.pl" type="email"/>
+</div>
+<div class="relative group">
+<label class="block font-label text-xs font-bold text-brand-gold uppercase tracking-widest mb-2 transition-colors group-focus-within:text-secondary">Interesująca Usługa</label>
+<select class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-brand-gold px-0 py-3 transition-all font-body text-lg appearance-none cursor-pointer">
+<option>Konsultacja ogólna</option>
+<option>Implantologia</option>
+<option>Protetyka</option>
+<option>Stomatologia estetyczna</option>
+<option>Stomatologia zachowawcza</option>
+</select>
+</div>
+<div class="md:col-span-2 relative group">
+<label class="block font-label text-xs font-bold text-brand-gold uppercase tracking-widest mb-2 transition-colors group-focus-within:text-secondary">Wiadomość (opcjonalnie)</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-brand-gold px-0 py-3 transition-all font-body text-lg placeholder:text-stone-300 resize-none" placeholder="Jak możemy Ci pomóc?" rows="3"></textarea>
+</div>
+<div class="md:col-span-2 pt-6">
+<button class="w-full md:w-auto bg-brand-gold text-on-primary px-12 py-5 rounded-md font-label text-sm font-bold tracking-widest uppercase hover:bg-secondary transition-all duration-500 shadow-lg shadow-brand-gold/20 flex items-center justify-center gap-3 transform hover:-translate-y-1 active:scale-95 group" type="submit">
+                                    Wyślij zgłoszenie
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-2">arrow_forward</span>
+</button>
+<p class="mt-6 font-label text-[10px] text-on-surface-variant leading-relaxed opacity-60">
+                                    Klikając przycisk "Wyślij zgłoszenie", wyrażasz zgodę na przetwarzanie swoich danych osobowych zgodnie z naszą Polityką Prywatności w celu obsługi zapytania.
+                                </p>
+</div>
+</form>
+</div>
+</div>
+</div>
+<section class="mt-32 relative overflow-hidden rounded-2xl h-[500px] group reveal border border-[#d0c5b8]/30 shadow-[0_24px_50px_rgba(77,70,60,0.08)]">
+<iframe allowfullscreen="" class="absolute inset-0 h-full w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?output=embed&amp;q=Gala+Dent,+ul.+Glowna+2B%2FG7,+62-023+Borowiec" title="Mapa dojazdu do GALA DENT"></iframe>
+<div class="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent pointer-events-none"></div>
+<div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 pointer-events-none">
+<div class="max-w-md bg-black/55 backdrop-blur-xl p-6 sm:p-8 rounded-xl border border-white/15 shadow-2xl pointer-events-auto">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 bg-brand-gold rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary text-3xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold text-white">GALA DENT</h4>
+<p class="font-body text-sm text-white/80">Borówiec, ul. Główna 2B/G7</p>
+</div>
+</div>
+<div class="mt-5 flex flex-wrap gap-3">
+<a class="inline-flex items-center gap-2 rounded-md bg-white text-[#6f5b3b] px-4 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:bg-brand-gold hover:text-white" href="https://www.google.com/maps/search/?api=1&amp;query=Gala+Dent,+ul.+Glowna+2B%2FG7,+62-023+Borowiec" rel="noopener noreferrer" target="_blank">
+Otwórz mapę
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-3 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 hover:border-brand-gold hover:text-brand-gold" href="https://www.google.com/maps/dir/?api=1&amp;destination=Gala+Dent,+ul.+Glowna+2B%2FG7,+62-023+Borowiec" rel="noopener noreferrer" target="_blank">
+Wyznacz trasę
+<span class="material-symbols-outlined text-sm">navigation</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-[#f5f4ee] dark:bg-[#121210] w-full rounded-t-3xl mt-20 reveal">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-12 py-16">
+<div class="col-span-1">
+<img alt="Logo GALA DENT" class="block w-full max-w-[220px] h-auto mb-4" src="../brand/gala-dent-logo.png"/>
+<p class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+                    Nowoczesna stomatologia z sercem. Holistyczne podejście i szacunek do pacjenta.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-[#6f5b3b] dark:text-[#C9B08A] font-headline text-xs font-bold uppercase tracking-widest mb-2">Usługi</h5>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors inline-block duration-300" href="#">Diagnostyka 3D</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors inline-block duration-300" href="#">Implantologia</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors inline-block duration-300" href="#">Protetyka</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-[#6f5b3b] dark:text-[#C9B08A] font-headline text-xs font-bold uppercase tracking-widest mb-2">Klinika</h5>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors inline-block duration-300" href="../index.html#/kontakt" target="_parent">Regulamin</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors inline-block duration-300" href="../index.html#/kontakt" target="_parent">Polityka Prywatności</a>
+<a class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm hover:text-[#6f5b3b] dark:hover:text-[#C9B08A] transition-colors inline-block duration-300" href="../index.html#/" target="_parent">Mapa Strony</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-[#6f5b3b] dark:text-[#C9B08A] font-headline text-xs font-bold uppercase tracking-widest mb-2">Kontakt</h5>
+<div class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<p>ul. Główna 2B/G7, 62-023 Borówiec</p>
+<p>793 100 567</p>
+<p>pacjenci@galadent.pl</p>
+</div>
+</div>
+</div>
+<div class="border-t border-stone-200/30 py-8 px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-[#6f5a4c] dark:text-[#a09a90] font-['Plus_Jakarta_Sans'] text-sm opacity-90">© 2024 GALA DENT. Wszelkie prawa zastrzeżone.</span>
+<span class="text-stone-400 font-label text-[10px] uppercase tracking-[0.2em] opacity-50">Designed for Excellence</span>
+</div>
+</footer>
+<script>
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+    </script>
+</body></html>
